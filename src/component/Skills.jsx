@@ -93,53 +93,70 @@ const Skills = () => {
         </div>
 
         
-        <div className="my-16 ">
-          <h3 id="exp" className="text-2xl font-bold text-center mb-6 tracking-wider text-white">Experience</h3>
-          <div className="space-y-6 ">
-            <div className="bg-slate-800 flex   p-6 shadow-lg rounded-lg">
-            <div>  <h4 className="font-semibold text-xl text-gray-300">Front-End Developer</h4>
-            
-            <div className="w-[160vh]">
-              <p className="text-white">BUSINESS WEB SOLUTIONS  | 22 July- 22 October 2024 </p>
-              <ul className="list-disc pl-6 mt-4 text-white">
-                <li>Implemented an interactive multi-page React application, Geo Atlas, that dynamically fetches and displays country-specific data using an API. Features include insights on population, region, flags, capital, top-level domain, currencies, and languages, enhancing performance by 20%.</li>
-                <li>Successfully mirrored the original Rocket Man website’s design. Emphasized a minimalistic and space themed design and uniform appearance across multiple browsers on a PC.</li>
-                <li>Built a dynamic web application that fetches and presents random Star Wars character data using the Star Wars API, improving user engagement and experience.</li>
-              </ul> 
-              </div></div>
-              <div className="w-72 " ><img className="w-70 " src="./images/bws.png" alt="" /></div>
-            </div>
-
-            <div className=" bg-slate-800 flex p-6 shadow-lg rounded-lg">
-             <div> <h4 className="font-semibold text-xl text-gray-300">Frontend Web Developer Intern </h4>
-             <div className=" w-[160vh]">
-              <p className="text-white"> PRODIGY INFOTECH  | 10 January- 10 February 2024 </p>
-              <ul className="list-disc pl-6 mt-4 text-white">
-                <li>Innovated a fully functional digital calculator integrated with core arithmetic operations. Implemented error handling and input validation to prevent incorrect calculations.</li>
-                <li>Developed a dynamic, browser-based Tic-Tac-Toe game using core web technologies ensuring responsive design with adaptive layout, smooth game mechanics and cross browser compatibility.</li>
-                <li>Engineered a comprehensive stopwatch application featuring real-time timekeeping, start/stop/reset functions; ensured flawless performance across five major web browsers while enhancing user experience with adaptive design elements.</li>
-              </ul>
-              </div>
-              </div>
-              <div className="w-80 "><img className="w-70  " src="./images/prodigy.jpeg" alt="" /></div>
-            </div>
-            {/* ... */}
-
-            <div className="bg-slate-800 flex p-6 shadow-lg rounded-lg">
-             <div> <h4 className="font-semibold  text-xl text-gray-300">Web Developer Intern  </h4>
-             <div className=" w-[160vh]">
-              <p className="text-white"> CODE SOFT  |20 September- 20 October 2023 </p>
-              <ul className="list-disc pl-6 mt-4 text-white">
-                <li>DInnovated a fully functional digital calculator integrated with core arithmetic operations. Implemented error handling and input validation to prevent incorrect calculations. </li>
-                <li>Designed a personal portfolio that included interactive elements and a custom content management system for updating and managing project information effortlessly. </li>
-                <li>Crafted a landing page for a gymnasium's website using HTML, CSS and JavaScript, Incorporated interactive elements such as animated buttons, hover effects etc. Integrated heigh quality images to enhance user experience. </li>
-              </ul>
-              </div>
-              </div>
-              <div className="w-96"><img className="w-70 "  src="./images/codesoft.jpeg" alt="" /></div>
-            </div>
-          </div>
+        <div className="my-16 px-4">
+  <h3 id="exp" className="text-2xl font-bold text-center mb-6 tracking-wider text-white">Experience</h3>
+  <div className="space-y-6">
+    
+    {/* Experience Card */}
+    {[
+      {
+        title: "Full Stack Developer intern",
+        company: "BUSINESS WEB SOLUTIONS",
+        duration: "22 July - 22 October 2024",
+        imgSrc: "./images/bws.png",
+        tasks: [
+          "Implemented an interactive multi-page React application, Geo Atlas, that dynamically fetches and displays country-specific data using an API. Features include insights on population, region, flags, capital, top-level domain, currencies, and languages, enhancing performance by 20%.",
+          "Successfully mirrored the original Rocket Man website’s design. Emphasized a minimalistic and space themed design and uniform appearance across multiple browsers on a PC.",
+          "Built a dynamic web application that fetches and presents random Star Wars character data using the Star Wars API, improving user engagement and experience.",
+        ],
+      },
+      {
+        title: "Frontend Web Developer Intern",
+        company: "PRODIGY INFOTECH",
+        duration: "10 January - 10 February 2024",
+        imgSrc: "./images/prodigy.jpeg",
+        tasks: [
+          "Modernized a home page of a clone website for “Printo”, a personalized gift delivery platform. Implemented product gallery.",
+          "Engineered a comprehensive stopwatch application featuring real-time timekeeping, start/stop/reset functions; ensured flawless performance across five major web browsers while enhancing user experience with adaptive design elements.Developed a dynamic, browser-based Tic-Tac-Toe game using core web technologies ensuring responsive design with adaptive layout, smooth game mechanics and cross browser compatibility",
+          "Developed a dynamic, browser-based Tic-Tac-Toe game using core web technologies ensuring responsive design with adaptive layout, smooth game mechanics and cross browser compatibility.",
+        ],
+      },
+      {
+        title: "Web Developer Intern",
+        company: "CODE SOFT",
+        duration: "20 September - 20 October 2023",
+        imgSrc: "./images/codesoft.jpeg",
+        tasks: [
+          "Innovated a fully functional digital calculator integrated with core arithmetic operations. Implemented error handling and input validation to prevent incorrect calculations.",
+          "Designed a personal portfolio that included interactive elements and a custom content management system for updating and managing project information effortlessly.",
+          "Crafted a landing page for a gymnasium's website using HTML, CSS and JavaScript, Incorporated interactive elements such as animated buttons, hover effects etc. Integrated heigh quality images to enhance user experience.",
+        ],
+      },
+    ].map((exp, index) => (
+      <div key={index} className="bg-slate-800 flex flex-col md:flex-row p-6 shadow-lg rounded-lg gap-6 items-center">
+        
+        {/* Text Section */}
+        <div className="flex-1">
+          <h4 className="font-semibold text-xl text-gray-300">{exp.title}</h4>
+          <p className="text-white">{exp.company} | {exp.duration}</p>
+          <ul className="list-disc pl-6 mt-4 text-white">
+            {exp.tasks.map((task, i) => (
+              <li key={i}>{task}</li>
+            ))}
+          </ul>
         </div>
+
+        {/* Image Section */}
+        <div className="w-full md:w-40 flex-shrink-0">
+          <img className="w-full h-auto rounded-md" src={exp.imgSrc} alt={exp.company} />
+        </div>
+        
+      </div>
+    ))}
+
+  </div>
+</div>
+
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ const About = () => {
         <hr />
         <div className="flex flex-col md:flex-row items-center justify-between p-6 md:p-14">
         
-          <div className="bg-gray-800 flex flex-col items-center justify-center mb-6 md:mb-0">
+          <div className="bg-slate-950 flex flex-col items-center justify-center mb-6 md:mb-0">
             <img className="w-48 h-48 md:w-80 md:h-80 rounded-sm" src="./images/about.jpg" alt="Pawan Bhatt" />
             <h2 className="font-bold text-2xl text-white mt-4">Pawan Bhatt - Developer</h2>
           </div>
